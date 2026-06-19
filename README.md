@@ -1,4 +1,39 @@
-# Gray Matter — Landing Page Drafts
+# Gray Matter — Pages
+
+| File | What it is |
+|------|-----------|
+| **`index.html`** | ⭐ **Brain Health Check** — premium, orange-themed quiz funnel (personality.co-style). This is the Vercel root. |
+| `landing.html` | Long-form "Clinical Premium" landing page (violet theme), linked as the upgrade CTA from the quiz results. |
+
+---
+
+## Brain Health Check (`index.html`) — quiz funnel
+
+A personality.co-style flow, **orange / premium** themed:
+
+1. **Intro** — bold hook, "3 min · private · science-backed", big CTA, social proof
+2. **10 questions** — one per screen, progress bar, large answer cards, **auto-advance**, Back button, selections are remembered
+3. **Email capture** — "Where should we send your score?" (name + email, validated)
+4. **Results** — animated Brain Health Score ring (0–100), tiered summary, **per-pillar breakdown bars**, then a dark CTA card up-selling the full Gray Matter assessment (links to `landing.html`)
+
+### Swap in your real quiz
+All questions live in one place — the `QUESTIONS` array near the bottom of `index.html`:
+
+```js
+{ q: "Question text", pillar: "Sleep & Recovery", hint: "optional",
+  options: [{label:"Best answer", score:3}, ... {label:"Worst", score:0}] }
+```
+
+- `score` runs 0 (worst) → 3 (best); the engine scales everything to /100 automatically.
+- `pillar` groups answers into the results breakdown — reuse the same pillar name across questions to combine them.
+- Edit `TIERS` to change the score bands and result copy.
+- **Wire up leads:** there's a `TODO` in `submitEmail()` to POST `{name, email, answers, score}` to your CRM (you have HubSpot connected).
+
+> ⚠️ Questions are evidence-based placeholders (I couldn't reach `brainhealthcheck.vercel.app` from this sandbox — egress is locked down). Paste your exact questions here, or send them to me and I'll drop them in verbatim.
+
+---
+
+# Long landing page (`landing.html`)
 
 A trust-first B2C landing page for **Gray Matter Cognition**, inspired by
 [functionhealth.com](https://www.functionhealth.com/) (premium, medical authority,
