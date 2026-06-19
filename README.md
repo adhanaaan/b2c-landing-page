@@ -2,7 +2,7 @@
 
 | File | What it is |
 |------|-----------|
-| **`index.html`** | ⭐ Long-form **"Clinical Premium" landing page** (violet theme). This is the Vercel root. |
+| **`index.html`** | ⭐ Long-form landing page, **GMS brand** (orange / cream / charcoal, Poppins + Inter, dot-grid texture). This is the Vercel root. |
 | `quiz.html` | Premium, orange-themed **Brain Health Check** quiz funnel (personality.co-style). Links back to `index.html` from its results CTA. |
 
 ---
@@ -77,17 +77,23 @@ Section order, all chosen to **signal trust & credibility**:
 
 Everything visual is driven by CSS variables at the top of `index.html`:
 
+The page uses the **GMS brand system**:
+
 ```css
 :root {
-  --brand:   #5b4bdb;   /* primary violet — your brand color */
-  --accent:  #19c39c;   /* "good/optimal" signals */
-  --bg-deep: #14122b;   /* dark sections + footer */
+  --brand:   #F77528;   /* GMS orange */
+  --bg:      #F7F7F4;   /* off-white */
+  --bg-soft: #FBEDD7;   /* cream (soft sections + cards) */
+  --bg-deep: #2D2D2D;   /* charcoal (dark sections + footer) */
+  --ink:     #2D2D2D;   /* charcoal text */
+  --dot:     rgba(45,45,45,.06); /* dot-grid background texture */
   ...
 }
 ```
 
-Change `--brand` and the whole page re-themes. Fonts: `Fraunces` (serif display)
-+ `Inter` (body) — swap the Google Fonts `<link>` to change.
+Change `--brand` and the whole page re-themes. A subtle **dot-grid texture** sits
+on the off-white background (tune via `--dot` + the `background-size` on `body`).
+Fonts: `Poppins` (headings) + `Inter` (body) — swap the Google Fonts `<link>` to change.
 
 ## Replace before launch
 - [ ] Real advisor names, credentials, institutions + **headshots** (swap the `.photo` divs for `<img>`)
