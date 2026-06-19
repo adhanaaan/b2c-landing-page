@@ -2,22 +2,22 @@
 
 | File | What it is |
 |------|-----------|
-| **`index.html`** | ⭐ **Brain Health Check** — premium, orange-themed quiz funnel (personality.co-style). This is the Vercel root. |
-| `landing.html` | Long-form "Clinical Premium" landing page (violet theme), linked as the upgrade CTA from the quiz results. |
+| **`index.html`** | ⭐ Long-form **"Clinical Premium" landing page** (violet theme). This is the Vercel root. |
+| `quiz.html` | Premium, orange-themed **Brain Health Check** quiz funnel (personality.co-style). Links back to `index.html` from its results CTA. |
 
 ---
 
-## Brain Health Check (`index.html`) — quiz funnel
+## Brain Health Check (`quiz.html`) — quiz funnel
 
 A personality.co-style flow, **orange / premium** themed:
 
 1. **Intro** — bold hook, "3 min · private · science-backed", big CTA, social proof
 2. **10 questions** — one per screen, progress bar, large answer cards, **auto-advance**, Back button, selections are remembered
 3. **Email capture** — "Where should we send your score?" (name + email, validated)
-4. **Results** — animated Brain Health Score ring (0–100), tiered summary, **per-pillar breakdown bars**, then a dark CTA card up-selling the full Gray Matter assessment (links to `landing.html`)
+4. **Results** — animated Brain Health Score ring (0–100), tiered summary, **per-pillar breakdown bars**, then a dark CTA card up-selling the full Gray Matter assessment (links to `index.html`)
 
 ### Swap in your real quiz
-All questions live in one place — the `QUESTIONS` array near the bottom of `index.html`:
+All questions live in one place — the `QUESTIONS` array near the bottom of `quiz.html`:
 
 ```js
 { q: "Question text", pillar: "Sleep & Recovery", hint: "optional",
@@ -33,7 +33,7 @@ All questions live in one place — the `QUESTIONS` array near the bottom of `in
 
 ---
 
-# Long landing page (`landing.html`)
+# Long landing page (`index.html`)
 
 A trust-first B2C landing page for **Gray Matter Cognition**, inspired by
 [functionhealth.com](https://www.functionhealth.com/) (premium, medical authority,
